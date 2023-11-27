@@ -7,8 +7,8 @@
 
     <nav class="navbar navbar-expand-sm navbar-light col-md-9 ml-auto "> <!--la barre de navigation-->
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavbar">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
@@ -20,7 +20,7 @@
                     <a class="nav-link active" aria-current="page" href="categorie.php">Categorie</a>
                  </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="platscat.php">Plats</a>
+                    <a class="nav-link active" aria-current="page" href="touslesplats.php">Plats</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>

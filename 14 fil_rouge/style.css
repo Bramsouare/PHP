@@ -44,14 +44,19 @@ video {
 .zoom:hover {
     transform: scale(1.1); 
 }
-
-/* .card-img {
+.timg{
+    height: 60%;
+}
+.tcard{
+height: 40%;
+}
+.imgs {
 
     height: 75%;
-} */
+}
 
 /* .cards-img {
-    width: 400px;
-    height: 400px;
+    
+    height: 75%;
 } */
 

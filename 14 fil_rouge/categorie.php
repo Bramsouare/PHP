@@ -30,22 +30,21 @@
             <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
 
         </div>
+        <div id="b" class="row"></div>
+        <div class="indexx">
+            <div class="d-none d-lg-block mx-auto">
 
-        <div class="d-none d-lg-block mx-auto">
-
-            <div class="d-flex justify-content-center"><!--élément centrer-->
-                <div class="row col-9" id="divcat"></div> 
-            </div><br>
-      
-            <div class="d-flex justify-content-around mt-5"> <!--bouton-->
-                <a href="index.php" class="btn btn-secondary btn-sm zoom">Précédent</a>
-                <a href="touslesplats.php" class="btn btn-secondary btn-sm zoom">Suivant</a>
+                <div class="d-flex justify-content-center"><!--élément centrer-->
+                    <div class="row col-9" id="divcat"></div> 
+                </div><br>
+        
+                <div class="d-flex justify-content-around mt-5"> <!--bouton-->
+                    <a href="index.php" class="btn btn-secondary btn-sm zoom">Précédent</a>
+                    <a href="touslesplats.php" class="btn btn-secondary btn-sm zoom">Suivant</a>
+                </div>
             </div>
-        </div>
 
-        <div>
-
-            <div class="d-md-none"> <!--élement pour version mobile-->
+            <div class="d-md-none my-2"> <!--élement pour version mobile-->
                 <div class="w-100">
                     <div class="row col-12" id="divcat"></div>
                 </div><br>
@@ -69,20 +68,62 @@
  
                 var categorie = data.categorie; // extrait de json les données de categorie
                 var divcat = $('#divcat'); // l'endroit de l'affichage
+                var index = $(".indexx");
+                
 
                 for (i = 0; i < categorie.length; i++) { // boucle qui parcour la longeur de categorie dans json 
 
                     var cat = categorie[i]; // et mis a jour pour crée dynamiquement les carte
 
+                    // carte qui s'affiche sur la page
                     var card = `
-                    <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-5">
-                        <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top img-fluid cards-img" alt="${cat.libelle}">
+                    <div class="card zoom ck col-12 col-md-2 mb-3 my-3 mx-5">
+                        <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top img-fluid cards-img imgs" alt="${cat.libelle}">
                             <div class="card-body">
-                                <p class="card-text">${cat.libelle}</p>
+                            <p value="${cat.id_categorie}"class="card-text">${cat.libelle}</p>
                             </div>
                         </div>`;
                     divcat.append(card);
                 };
+
+                $(".ck") .click (function (){ // quand l'élément ck est cliqué 
+                    index.hide();
+                    // trouvé la valeur sur l'élément cliqué puis l'affecte dans la variable 
+                    var platid = $(this).find(".card-text").attr("value");
+
+                    // parcourir plat
+                    var plat = data.plat
+                
+                    // vider le resultat de la recherche
+                    $("#b").empty();
+                 
+                    // parcour chaque élément dans le tableau plat
+                    $.each (plat, function (index, un){
+
+              
+                        // récupère l'id de la catégorie de l'élément 
+                        var catid = un.id_categorie;
+
+                        // vérifie si l'id de la catégorie et l'id en cours de traitement correspondent
+                        if (catid == platid) {
+                            
+                            // crée une carte qui s'affiche quand on clique sur une carte de la page
+                            var carte = `
+                                <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4">
+                                    <img src="asset/images_the_district/food/${un.image}" class="card-img-top img-fluid card-img imgs" alt="${un.libelle}">
+                                    <div class="card-body">
+                                        <p class="card-text">${un.libelle}</p>
+                                        <a href="commande.php" class="btn btn-primary">Commander</a>
+                                    </div>
+                                </div>`;
+
+                            // Ajoute la carte à un élément spécifique sur la page
+                         $("#b").append(carte);
+
+                        }
+
+                    })
+                })
 
             }));
 

@@ -27,13 +27,10 @@
         </div>
         <div class="d-flex justify-content-center mt-3"> <!--tittre centrer-->
 
-            <h3>Nom des plats</h3>
+            <h3>Tout les plats</h3>
         </div>
-        <div class="d-none d-lg-block mx-auto">
 
-        <div class=" d-flex justify-content-center"><!--élément centrer-->
-                <div class="row col-9 " id="divcat"></div> 
-            </div><br>   
+        <div class="d-none d-lg-block mx-auto">
 
             <div class="d-flex justify-content-center"> <!--élément centrer-->              
                 <div class="col-9 row " id="divplat"></div>
@@ -50,7 +47,7 @@
             <div class="d-flex justify-content-center w-100">
 
                 <div class="col-12">
-                    <div class="row col-" id="divplat"></div>
+                    <div class="row col-10 " id="divplat"></div>
                 </div>
             </div>
             <div class="d-none d-flex justify-content-around "> <!--bouton-->
@@ -76,11 +73,14 @@
                 for (i = 0; i < plat.length; i++) { // une boucle qui parcour tout les plats
 
                     var plt = plat[i]; // mis a jour pour crée dynamiquement les cartes
+
+                    // carte qui s'affiche sur la page
                     var card = `
-                    <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4">
-                        <img src="asset/images_the_district/food/${plt.image}" class="card-img-top img-fluid card-img" alt="${plt.libelle}">
+                    <div class="card  zoom tcard col-12 col-md-2 mb-3 my-3 mx-3">
+                        <img src="asset/images_the_district/food/${plt.image}" class="card-img-top img-fluid card-img timg" alt="${plt.libelle}">
                         <div class="card-body">
                             <p class="card-text">${plt.libelle}</p>
+                            <a href="commande.php" class="btn btn-primary">Commander</a>
                         </div>
                     </div></div>`;
                     divplat.append(card);
