@@ -23,7 +23,7 @@
 
     <div class="container-fluid">
 
-        <?php include 'header.php';?> <!--entête-->
+        <?php include 'header.php';?> <!--entête de page-->
 
         <div>
             <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
@@ -77,7 +77,7 @@
                 </div><br>
             </div>
              
-            <button type="submit" href="#" id="envoyer" name="envoyer" class="btn btn-primary btn-sm zoom">Envoyer</button> <!--bouton-->
+            <button type="submit" href="#" id="envoyer" name="envoyer" class="btn btn-primary btn-md zoom">Envoyer</button> <!--bouton-->
                 
         </form>
         
@@ -127,7 +127,7 @@
                         <strong>Ce champ est obligatoire !</strong> 
                     </div><br>
                 </div>
-                <button type="submit" href="#" id="envoyer" name="envoyer"class="btn btn-primary btn-sm">Envoyer</button><!--bouton-->
+                <button type="submit" href="#" id="envoyer" name="envoyer"class="btn btn-primary btn-md ">Envoyer</button><!--bouton-->
                  
                 
 
@@ -138,7 +138,8 @@
         <?php include 'footer.php'; ?> <!--bas de page-->
 
     </div>
-  
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous">

@@ -48,15 +48,16 @@ video {
     height: 60%;
 }
 .tcard{
-height: 40%;
+height: 400px;
 }
 .imgs {
 
     height: 75%;
 }
-
-/* .cards-img {
+@media screen and (max-width: 768px) {
+    .tcard{
+        height: 9%;
+    };
     
-    height: 75%;
-} */
+};
 

@@ -20,46 +20,39 @@
 
     <div class="container-fluid">
 
-        <?php include 'header.php';?> <!--entête-->
+        <?php include 'header.php';?> <!--entête de page-->
 
         <div>
             <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
         </div>
-        <div class="d-flex justify-content-center mt-3"> <!--tittre centrer-->
+        <div class="text-center mt-3"> <!--tittre centrer-->
 
             <h3>Tout les plats</h3>
+
         </div>
-
-        <div class="d-none d-lg-block mx-auto">
-
-            <div class="d-flex justify-content-center"> <!--élément centrer-->              
-                <div class="col-9 row " id="divplat"></div>
-            </div>
+        <div class="row d-flex justify-content-center">
+             
+                  <!--élément centrer-->              
+             <div class="col-12 col-md-9 row d-flex justify-content-center " id="divplat"></div> <!--col-12 format sm et au dessus de md col 9 -->                  
+ 
             
-            <div class="d-flex justify-content-around mt-3"> <!--bouton-->
-
-                <a href="categorie.php" class="btn btn-secondary btn-sm zoom">Précédent</a>
-                <a href="commande.php" class="btn btn-secondary btn-sm zoom">Suivant</a>
+         <!--bouton-->
+            <div class="col-12 col-md-8 d-flex justify-content-between row  mt-3">
+            
+                <a href="categorie.php" class="btn btn-secondary btn-md zoom col-2">Précédent</a>
+                 <a href="commande.php" class="btn btn-secondary btn-md zoom col-2">Suivant</a>
             </div>
-        </div>
-        <div class="d-md-none mx-auto"> <!--pour la version mobile-->
-
-            <div class="d-flex justify-content-center w-100">
-
-                <div class="col-12">
-                    <div class="row col-10 " id="divplat"></div>
-                </div>
-            </div>
-            <div class="d-none d-flex justify-content-around "> <!--bouton-->
-                <a href="categorie.php" class="btn btn-secondary btn-sm">Précédent</a>
-                <a href="commande.php" class="btn btn-secondary btn-sm">Suivant</a>
-            </div>
-        </div>
-
-        <?php include 'footer.php'; ?> <!--bas de page-->
+       
+        
+            
+            <?php include 'footer.php';?> <!--bas de page-->
+         </div>
 
     </div>
+
+    
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
 
@@ -76,11 +69,11 @@
 
                     // carte qui s'affiche sur la page
                     var card = `
-                    <div class="card  zoom tcard col-12 col-md-2 mb-3 my-3 mx-3">
+                    <div class="card zoom tcard col-12 col-md-2 mb-2 my-2 mx-3">
                         <img src="asset/images_the_district/food/${plt.image}" class="card-img-top img-fluid card-img timg" alt="${plt.libelle}">
                         <div class="card-body">
                             <p class="card-text">${plt.libelle}</p>
-                            <a href="commande.php" class="btn btn-primary">Commander</a>
+                            <a href="commande.php" class="btn btn-primary d-flex justify-content-center">Commander</a>
                         </div>
                     </div></div>`;
                     divplat.append(card);
