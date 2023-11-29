@@ -35,7 +35,23 @@ video {
     transform: translate(-50%, -50%);
     z-index: 1;
 }
+.custom-border{
+    border:  solid white;
+    border-width: 5%;
+    border-radius: 20%;
+}
+.border-1{
+    border-radius: 20%;
+    border-width: 5%;
+    border:  solid transparent ;
+}
+.bg{
+    background-color: #970747;
 
+}
+.card-body {
+    color: white;
+}
 .zoom {
     
     transition: transform 0.2s;
@@ -45,7 +61,7 @@ video {
     transform: scale(1.1); 
 }
 .timg{
-    height: 60%;
+    height: 40%;
 }
 .tcard{
 height: 400px;

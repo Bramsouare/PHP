@@ -30,6 +30,44 @@
             <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
 
         </div>
+
+        <div id="commande" class="row d-flex justify-content-center mx-auto"></div>
+        
+
+        <div class="form">
+            <form>
+                    <div class="form-group mt-5">
+
+                        <label for="nomPrenom">Nom et prénom</label> <!--nom et prenom-->
+                        <input type="text" class="form-control" id="nomPrenom">
+                        <span id="!n_manquant"></span>
+                    </div>
+                    <div class="row mt-5"> <!--les deux élément aligner sur une ligne-->
+
+                        <div class="form-group col-6">
+                            <label for="email">Email</label> <!--email-->
+                            <input type="email" class="form-control" id="email">
+                            <span id="!email_manquant"></span>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="telephone">Téléphone</label> <!--telephone-->
+                            <input type="text" class="form-control" id="telephone">
+                            <span id="!telephone_manquant"></span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-5 mb-3">
+                        <label for="adresse">Votre adresse :</label> <!--adresse-->
+                        <textarea class="form-control" id="adresse" name="adresse"></textarea>
+                        <span id="!adresse_manquant"></span>
+                    </div>
+                    <div class="form-group mt-5 mb-3">
+
+                        <a href="contact.php" class="btn btn-primary">Envoyer</a> <!--bouton-->
+
+                    </div>
+
+                </form>
+            </div>
         <div id="b" class="row d-flex justify-content-center mx-auto"></div>
         <div class="indexx">
             
@@ -38,9 +76,9 @@
             <div class="row col-12 col-md-8 d-flex justify-content-around" id="divcat"></div> 
         </div><br>
         
-        <div class="col-12 col-md-8 d-flex justify-content-between row mt-3"> <!--bouton-->
-            <a href="index.php" class="btn btn-secondary btn-md zoom col-2">Précédent</a>
-            <a href="touslesplats.php" class="btn btn-secondary btn-md zoom col-2">Suivant</a>
+        <div class=" d-flex justify-content-around row mt-2"> <!--bouton-->
+            <a href="index.php" class="btn btn-secondary btn-lg zoom col-5 col-md-1">Précédent</a>
+            <a href="touslesplats.php" class="btn btn-secondary btn-lg zoom col-5 col-md-1">Suivant</a>
         </div>
               
     </div>
@@ -56,7 +94,9 @@
                 var categorie = data.categorie; // extrait de json les données de categorie
                 var divcat = $('#divcat'); // l'endroit de l'affichage
                 var index = $(".indexx");
-                
+                var form = $(".form");
+                var commande = $("#commande");
+                form.hide();
 
                 for (i = 0; i < categorie.length; i++) { // boucle qui parcour la longeur de categorie dans json 
 
@@ -99,18 +139,59 @@
                                 <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4">
                                     <img src="asset/images_the_district/food/${un.image}" class="card-img-top img-fluid card-img imgs" alt="${un.libelle}">
                                     <div class="card-body">
-                                        <p class="card-text">${un.libelle}</p>
-                                        <a href="commande.php" class="btn btn-primary d-flex justify-content-center">Commander</a>
+                                        <h5 class="card-title">${un.libelle}</h5>
+                                        <p class="card-text">${un.description} <br>
+                                        Menu: ${un.prix} €</p>
+                                        <a href="#" value="${un.id_plat}" class="btn btn-primary d-flex justify-content-center idd">Commander</a>
                                     </div>
                                 </div>`;
 
                             // Ajoute la carte à un élément spécifique sur la page
-                         $("#b").append(carte);
+                            $("#b").append(carte);
 
-                        }
+                        };
 
-                    })
-                })
+                    });
+
+                    $(document).on("click", ".idd", function(e){
+                 
+                        e.preventDefault();
+                        console.log("e");
+                        var ids = $(this).attr("value");
+
+                        pushcommande(ids);
+                    
+                    });
+
+                    function pushcommande(ids){
+
+                        $("#b").empty();
+                        form.show();
+
+
+                        $.each(plat, function(groupe, individuel){
+
+                            if (ids == individuel.id_plat){
+
+                                var carte = `
+                                    <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4 d-flex justify-content-center">
+                                        <img src="asset/images_the_district/food/${individuel.image}" class="card-img-top img-fluid card-img imgs" alt="${individuel.libelle}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${individuel.libelle}</h5>
+                                            <p class="card-text">${individuel.description} <br>
+                                            Menu: ${individuel.prix} €</p>
+                                            <a href="#" class="btn btn-primary d-flex justify-content-center">Quantité: 1</a>
+                                        </div>
+                                    </div>`;
+
+                                commande.append(carte);
+
+
+                            };
+                        });
+                    };
+
+                });
 
             }));
 
