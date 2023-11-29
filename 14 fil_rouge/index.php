@@ -181,7 +181,7 @@
                     // carte qui s'affiche sur l'index 
                     var card = `
                         <div class="card custom-border zoom ck col-12 col-md-2 bg my-4 mx-5 " >
-                            <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top border-1  img-fluid cards-img imgs" alt="${cat.libelle}">
+                            <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top border-1 mt-3 img-fluid cards-img imgs" alt="${cat.libelle}">
                             <div class="card-body">
                                 <p value="${cat.id_categorie}"class="card-text text-wrap">${cat.libelle}</p>
                             </div>
