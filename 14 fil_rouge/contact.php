@@ -26,7 +26,7 @@
         <?php include 'header.php';?> <!--entête de page-->
 
         <div>
-            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
+            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0 rounded" alt="image de tete"> <!--image-->
 
         </div>
         <div class="d-none d-lg-block mx-auto">
@@ -76,13 +76,13 @@
                     <strong>Ce champ est obligatoire !</strong> 
                 </div><br>
             </div>
-             
-            <button type="submit" href="#" id="envoyer" name="envoyer" class="btn btn-primary btn-md zoom">Envoyer</button> <!--bouton-->
-                
-        </form>
-        
-
+            <button type="submit" href="#" id="envoyer" name="envoyer" class="btn btn-light btns btn-md zoom">Envoyer</button> <!--bouton-->
+            </form>
+        </div> 
+        <div class="d-flex justify-content-around">
+            <a href="touslesplats.php" class=" btn btn-light btn-lg zoom col-5 col-md-1 btns">Précédent</a>   
         </div>
+      
         <div class="d-md-none">
 
            
@@ -127,7 +127,7 @@
                         <strong>Ce champ est obligatoire !</strong> 
                     </div><br>
                 </div>
-                <button type="submit" href="#" id="envoyer" name="envoyer"class="btn btn-primary btn-md ">Envoyer</button><!--bouton-->
+                <button type="submit" href="#" id="envoyer" name="envoyer"class="btn btn-ligth btn-md ">Envoyer</button><!--bouton-->
                  
                 
 

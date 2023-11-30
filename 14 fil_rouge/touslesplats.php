@@ -23,7 +23,7 @@
         <?php include 'header.php';?> <!--entête de page-->
 
         <div>
-            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
+            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0 rounded" alt="image de tete"> <!--image-->
         </div>
         <div id="commande" class="row d-flex justify-content-center mx-auto"></div>
         
@@ -74,8 +74,8 @@
  
            
             <div class="d-flex justify-content-around row mt-3"> <!--bouton-->      
-                <a href="categorie.php" class="btn btn-secondary btn-lg zoom col-5 col-md-1 btns">Précédent</a>
-                <a href="commande.php" class="btn btn-secondary btn-lg zoom col-5 col-md-1 btns">Suivant</a>
+                <a href="categorie.php" class="btn btn-light btn-lg zoom col-5 col-md-1 btns">Précédent</a>
+                <a href="contact.php" class="btn btn-light btn-lg zoom col-5 col-md-1 btns">Suivant</a>
             </div>
        
         
@@ -105,13 +105,14 @@
 
                     // carte qui s'affiche sur la page
                     var card = `
-                    <div class="card zoom col-12 col-md-2 mb-2 my-2 mx-3">
-                        <img src="asset/images_the_district/food/${plt.image}" class="card-img-top img-fluid card-img timg" alt="${plt.libelle}">
-                        <div class="card-body">
-                            <h5 class="card-title">${plt.libelle}</h5>
+                    <div class="card custom-border bg zoom col-12 col-md-2 mb-2 my-2 mx-3">
+                        <img src="asset/images_the_district/food/${plt.image}" class="card-img-top border-1 mt-3 img-fluid card-img timg" alt="${plt.libelle}">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">${plt.libelle}</h3>
                             <p class="card-text">${plt.description} <br>
                             Menu: ${plt.prix} €</p>
-                            <a href="#" value="${plt.id_plat}" class="btn btn-primary d-flex justify-content-center idd">Commander</a>
+                            <a href="#" value="${plt.id_plat}" class="btn btn-light
+                             d-flex justify-content-center idd">Commander</a>
                         </div>
                     </div></div>`;
                     divplat.append(card);
@@ -145,10 +146,10 @@
                         if (ids == individuel.id_plat){
 
                             var carte = `
-                                <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4 d-flex justify-content-center">
-                                    <img src="asset/images_the_district/food/${individuel.image}" class="card-img-top img-fluid card-img imgs" alt="${individuel.libelle}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${individuel.libelle}</h5>
+                                <div class="card custom-border bg zoom col-12 col-md-2 mb-3 my-3 mx-4 d-flex justify-content-center">
+                                    <img src="asset/images_the_district/food/${individuel.image}" class="card-img-top border-1 mt-3 img-fluid card-img imgs" alt="${individuel.libelle}">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">${individuel.libelle}</h3>
                                         <p class="card-text">${individuel.description} <br>
                                         Menu: ${individuel.prix} €</p>
                                         <a href="#" class="btn btn-primary d-flex justify-content-center">Quantité: 1</a>

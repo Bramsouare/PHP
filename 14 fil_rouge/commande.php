@@ -81,23 +81,6 @@
         </div>
         <div class="d-md-none"> <!--version mobile les élément son en colonne-->
 
-            <div class="w-50 mx-auto mt-2" style="max-width: 540px;"> <!--carte-->
-
-                <div class="row no-gutters">
-
-                    <div class="col-md-4">
-                        <img src="asset/images_the_district/food/lasagnes_viande.jpg" class="card-img"
-                            alt="platCommander">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Plats commandés</h5>
-                            <p class="card-text">Quantité: <span id="quantityy">0</span></p>
-                            <button id="increaseQuantityy" class="btn btn-primary">Augmenter la quantité</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <form>
 
                 <div class="form-group mt-5">

@@ -27,47 +27,50 @@
         <?php include 'header.php';?> <!--entête de page-->
 
         <div>
-            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0" alt="image de tete"> <!--image-->
+            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0 rounded" alt="image de tete"> <!--image-->
 
         </div>
 
-        <div id="commande" class="row d-flex justify-content-center mx-auto"></div>
+        <div id="commande" class="row d-flex justify-content-center mx-auto"></div> <!---->
         
 
         <div class="form">
+
             <form>
-                    <div class="form-group mt-5">
+                    
+                <div class="form-group mt-5">
 
-                        <label for="nomPrenom">Nom et prénom</label> <!--nom et prenom-->
-                        <input type="text" class="form-control" id="nomPrenom">
-                        <span id="!n_manquant"></span>
+                    <label for="nomPrenom">Nom et prénom</label> <!--nom et prenom-->
+                    <input type="text" class="form-control" id="nomPrenom">
+                    <span id="!n_manquant"></span>
+                </div>
+                <div class="row mt-5"> <!--les deux élément aligner sur une ligne-->
+
+                    <div class="form-group col-6">
+                        <label for="email">Email</label> <!--email-->
+                        <input type="email" class="form-control" id="email">
+                        <span id="!email_manquant"></span>
                     </div>
-                    <div class="row mt-5"> <!--les deux élément aligner sur une ligne-->
-
-                        <div class="form-group col-6">
-                            <label for="email">Email</label> <!--email-->
-                            <input type="email" class="form-control" id="email">
-                            <span id="!email_manquant"></span>
-                        </div>
-                        <div class="form-group col-6">
-                            <label for="telephone">Téléphone</label> <!--telephone-->
-                            <input type="text" class="form-control" id="telephone">
-                            <span id="!telephone_manquant"></span>
-                        </div>
+                    <div class="form-group col-6">
+                        <label for="telephone">Téléphone</label> <!--telephone-->
+                        <input type="text" class="form-control" id="telephone">
+                        <span id="!telephone_manquant"></span>
                     </div>
-                    <div class="form-group mt-5 mb-3">
-                        <label for="adresse">Votre adresse :</label> <!--adresse-->
-                        <textarea class="form-control" id="adresse" name="adresse"></textarea>
-                        <span id="!adresse_manquant"></span>
-                    </div>
-                    <div class="form-group mt-5 mb-3">
+                </div>
+                <div class="form-group mt-5 mb-3">
+                    <label for="adresse">Votre adresse :</label> <!--adresse-->
+                    <textarea class="form-control" id="adresse" name="adresse"></textarea>
+                    <span id="!adresse_manquant"></span>
+                </div>
+                <div class="form-group mt-5 mb-3">
 
-                        <a href="contact.php" class="btn btn-primary">Envoyer</a> <!--bouton-->
+                    <a href="contact.php" class="btn btn-primary">Envoyer</a> <!--bouton-->
 
-                    </div>
+                </div>
 
-                </form>
-            </div>
+            </form>
+        </div>
+
         <div id="b" class="row d-flex justify-content-center mx-auto"></div>
         <div class="indexx">
             
@@ -77,8 +80,8 @@
         </div><br>
         
         <div class=" d-flex justify-content-around row mt-2"> <!--bouton-->
-            <a href="index.php" class="btn btn-secondary btn-lg zoom col-5 col-md-1">Précédent</a>
-            <a href="touslesplats.php" class="btn btn-secondary btn-lg zoom col-5 col-md-1">Suivant</a>
+            <a href="index.php" class="btn btn-light btn-lg zoom col-5 col-md-1 btns">Précédent</a>
+            <a href="touslesplats.php" class="btn btn-light btn-lg zoom col-5 col-md-1 btns">Suivant</a>
         </div>
               
     </div>
@@ -103,14 +106,38 @@
                     var cat = categorie[i]; // et mis a jour pour crée dynamiquement les carte
 
                     // carte qui s'affiche sur la page
-                    var card = `
-                    <div class="card zoom ck col-12 col-md-2 mb-3 my-4 mx-5">
-                        <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top img-fluid cards-img imgs" alt="${cat.libelle}">
-                            <div class="card-body">
-                            <p value="${cat.id_categorie}"class="card-text">${cat.libelle}</p>
+                    var card = $( `
+                    <div class="card custom-border bg zoom ck col-12 col-md-2 mb-3 my-4 mx-5">
+                        <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top border-1 mt-3 img-fluid cards-img imgs" alt="${cat.libelle}">
+                            <div class="card-body text-center">
+                            <h2 value="${cat.id_categorie}"class="card-text">${cat.libelle}</h2>
+                            <span class="alert text-danger"><span>
                             </div>
-                        </div>`;
-                    divcat.append(card);
+                    </div>`);
+
+                    var alert = card.find(".alert");
+                        alert.text(cat.active === 'Yes' ? '' : 'victime de son succès');
+                 
+                    if (cat.active === "Yes"){ 
+                        divcat.append(card); // afficher les carte de divcat
+                    }
+                         
+                    else {
+
+                        vide = $( `
+                            <div class="card custom-border bg zoom  col-12 col-md-2 bg my-4 mx-5 " >
+                                <img src="asset/images_the_district/categorie/${cat.image}" class="card-img-top border-1 mt-3 img-fluid cards-img imgs" alt="${cat.libelle}">
+                                <div class="card-body text-center">
+                                <h2 value="${cat.id_categorie}"class="card-text text-wrap">${cat.libelle}</h2>
+                                <span class="alert text-danger"></span>
+                            </div>
+                        </div>`);
+
+                        divcat.append(vide); // afficher les carte de divcat
+
+                        var alert = vide.find(".alert");
+                        alert.text(cat.active === 'Yes' ? '' :'victime de son succès');
+                    };
                 };
 
                 $(".ck") .click (function (){ // quand l'élément ck est cliqué 
@@ -136,13 +163,13 @@
                             
                             // crée une carte qui s'affiche quand on clique sur une carte de la page
                             var carte = `
-                                <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4">
-                                    <img src="asset/images_the_district/food/${un.image}" class="card-img-top img-fluid card-img imgs" alt="${un.libelle}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${un.libelle}</h5>
+                                <div class="card custom-border bg zoom col-12 col-md-2 mb-3 my-3 mx-4">
+                                    <img src="asset/images_the_district/food/${un.image}" class="card-img-top border-1 mt-3 img-fluid card-img imgs" alt="${un.libelle}">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title">${un.libelle}</h2>
                                         <p class="card-text">${un.description} <br>
                                         Menu: ${un.prix} €</p>
-                                        <a href="#" value="${un.id_plat}" class="btn btn-primary d-flex justify-content-center idd">Commander</a>
+                                        <a href="#" value="${un.id_plat}" class="btn btn-light d-flex justify-content-center idd">Commander</a>
                                     </div>
                                 </div>`;
 
@@ -174,10 +201,10 @@
                             if (ids == individuel.id_plat){
 
                                 var carte = `
-                                    <div class="card zoom col-12 col-md-2 mb-3 my-3 mx-4 d-flex justify-content-center">
-                                        <img src="asset/images_the_district/food/${individuel.image}" class="card-img-top img-fluid card-img imgs" alt="${individuel.libelle}">
+                                    <div class="card custom-border zoom col-12 col-md-2 mb-3 my-3 mx-4 d-flex justify-content-center">
+                                        <img src="asset/images_the_district/food/${individuel.image}" class="card-img-top border-1 mt-3 img-fluid card-img imgs" alt="${individuel.libelle}">
                                         <div class="card-body">
-                                            <h5 class="card-title">${individuel.libelle}</h5>
+                                            <h2 class="card-title">${individuel.libelle}</h2>
                                             <p class="card-text">${individuel.description} <br>
                                             Menu: ${individuel.prix} €</p>
                                             <a href="#" class="btn btn-primary d-flex justify-content-center">Quantité: 1</a>

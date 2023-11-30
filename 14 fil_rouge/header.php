@@ -2,7 +2,7 @@
 
     <div class="col-4 col-md-2 mt-2 "> <!--le logo-->
         <img src="asset/images_the_district/the_district_brand/linkedin_banner_image_1.png"
-            class="img-fluid mb-1 logo" alt="the district logo">
+            class="img-fluid mb-1 logo rounded" alt="the district logo">
     </div>
 
     <nav class="navbar navbar-expand-sm navbar-light col-md-9 ml-auto "> <!--la barre de navigation-->
