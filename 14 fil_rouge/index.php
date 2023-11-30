@@ -19,7 +19,7 @@
 
         <div class="d-none d-lg-block position-relative"> <!--barre de recherche sur le centre de la video-->
 
-            <video autoplay loop muted playsinline poster="asset/images_the_district/burgervideo.mp4" class="video rounded"> <!--video--> 
+            <video autoplay loop muted playsinline poster="asset/images_the_district/burgervideo.mp4" class="video rounded-3"> <!--video--> 
                 <source src="asset/images_the_district/burgervideo.mp4" type="video/mp4">
             </video>
 
@@ -38,7 +38,7 @@
 
         <div class="image-container d-md-none"> 
 
-            <img src="asset/images_the_district/borderau.png" alt="image de remplacement" class="img-fluid rounded"> <!--image-->
+            <img src="asset/images_the_district/borderau.png" alt="image de remplacement" class="img-fluid rounded-3"> <!--image-->
         </div>
         <div id="a" class="row d-flex justify-content-center mx-auto"></div> 
         <div id="commande" class="row d-flex justify-content-center mx-auto"></div>

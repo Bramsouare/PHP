@@ -16,7 +16,6 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .item-content {
@@ -29,7 +28,6 @@ video {
     width: 100%;
     height: 300px;
     object-fit: cover;
- 
 }
 
 .search-bar {
@@ -55,10 +53,24 @@ video {
     border:  solid transparent ;
 }
 
+.rotate {
+
+    width: 100px;
+    height: 100px;
+    transition: transform 0.1s; 
+}
+
+.rotate:hover {
+    transform: rotate(1deg); 
+}
 .bg {
 
     background-color: #970747;
+}
 
+.ecrt {
+
+    font-size: 140%;
 }
 
 .btns {
@@ -70,7 +82,6 @@ video {
 
     background-color: #fef4e8;
     border:  solid #970747
-   
 }
 .card-body {
 

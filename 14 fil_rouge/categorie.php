@@ -27,7 +27,7 @@
         <?php include 'header.php';?> <!--entête de page-->
 
         <div>
-            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0 rounded" alt="image de tete"> <!--image-->
+            <img src="asset/images_the_district/borderau.png" class="img-fluid col-12 px-0 m-0 rounded-3" alt="image de tete"> <!--image-->
 
         </div>
 
