@@ -109,17 +109,89 @@
         } 
         else { // sinon
                 
-            unset($_SESSION['nom']); // la session sera détruite
-            unset($_SESSION['prenom']);
-            unset($_SESSION['email']);
-            unset($_SESSION['telephone']);
-            unset($_SESSION['message']);
-            session_destroy(); // la destruction sera faite proprement
+            if (!nom($nom)) {
+                echo '<script>document.getElementById("n").style.display = "block";</script>';
+            }
+            if (!prenom($prenom)) {
+                echo '<script>document.getElementById("p").style.display = "block";</script>';
+            }
+            if (!email($email)) {
+                echo '<script>document.getElementById("e").style.display = "block";</script>';
+            }
+            if (!telephone($telephone)) {
+                echo '<script>document.getElementById("t").style.display = "block";</script>';
+            }
+            if (!message($message)) {
+                echo '<script>document.getElementById("m").style.display = "block";</script>';
+            }
 
-            // puis message d'alerte
-            echo "Veuillez remplir correctement le formulaire S.V.P !";
+        };
 
-        }
-    }
+      
+    };
+      // // les éléments du formulaire
+        // $nomPrenom = $_POST['nomPrenom'];
+        // $emails = $_POST['emails'];
+        // $telephones = $_POST['telephones'];
+        // $messages = $_POST['messages'];
+
+        // function nomPrenom($nomPrenom) { // ma fonction nomPrenom
+
+        //     $verif = "/^[a-zA-Z0-9]+$/"; // vérification avec expression régulière 
+
+        //     if (preg_match($verif, $nomPrenom)) { // si le nom respecte la condition imposée alors...
+        //         return true; // applique vrai
+        //     } 
+        //     else { // sinon
+        //         echo "<p>Le Nom et Prenom invalide</p>"; // message d'alerte 
+        //         return false; // et faux sera appliqué
+        //     }
+        // }
+
+        // function emails($emails) { // ma fonction email
+
+        //     $verif = "/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/"; // vérification avec expression régulière
+
+        //     if (preg_match($verif, $emails)) { // si email respecte la condition alors...
+        //         return true; // applique vrai
+        //     } 
+        //     else { // sinon
+        //         echo "<p>L'email est invalide</p>"; // message d'alerte
+        //         return false; // et faux sera appliqué
+        //     }
+        // }
+
+        // function telephones($telephones) { // ma fonction téléphone
+
+        //     $verif = "/^[0-9]{10,}$/"; // vérification par expression régulière
+
+        //     if (preg_match($verif, $telephones)) { // si téléphone respecte la condition alors...
+        //         return true; // applique vrai
+        //     } 
+        //     else { // sinon
+        //         echo "<p>Le numéro est invalide</p>"; // message d'alerte
+        //         return false; // et faux sera appliqué
+        //     }
+        // }
+
+        // function messages($messages) { // ma fonction message
+
+        //     $verif = "/^[a-zA-Z0-9\s\S]+$/"; // vérification avec expression régulière
+
+        //     if (preg_match($verif, $messages)) { // si message respecte la condition alors...
+        //         return true; // applique vrai
+        //     } 
+        //     else { // sinon
+        //         echo "<p>Le message est invalide</p>"; // message d'alerte
+        //         return false; // et faux sera appliqué
+        //     }
+        // }
+
+        // // si toutes les conditions appliquent vrai alors...
+        // if (nomPrenom($nomPrenom) == true && emails($emails) == true && telephones($telephones) == true && messages($messages) == true) {
+
+            
+        // }
+
 
 ?>

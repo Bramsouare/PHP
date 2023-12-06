@@ -1,24 +1,27 @@
 $(document).ready(function () {
 
-    $("#envoyer").click(function () {
-
+    $("#envoyer").click(function (e) {
+       
+        e.preventDefault();
         validation();
     });
 
     function validation() {
-
+       
         var envoi = true;
 
         var nom = $("#nom").val();
         if (nom === "") {
             envoi = false;
             $("#n").show();
+        
         }
         else {
+           
             $("#n").hide();
 
         };
-
+   
 
         var prenom = $("#prenom").val();
         if (prenom === "") {
@@ -59,9 +62,59 @@ $(document).ready(function () {
         }
         else {
             $("#m").hide();
-
+    
         };
+       
 
+    };
+    $("#envoie").click(function (e) {
+    
+             e.preventDefault();
+        valide();
+    });
+    function valide(){
 
+        
+
+    var nomp = $("#nomPrenom").val();
+    if (nomp === "") {
+        envoi = false;
+        $("#n_manquant").show();
     }
+    else {
+        $("#n_manquant").hide();
+        alert("f");
+    }
+    console.log(nomp);
+    var emails = $("#emails").val();
+    if (emails === "") {
+        envoi = false;
+        $("#email_manquant").show();
+    }
+    else {
+        $("#email_manquant").hide();
+    }
+
+    var tel = $("#telephones").val();
+    if (tel === "") {
+        envoi = false;
+        $("#telephone_manquant").show();
+    }
+    else {
+        $("#telephone_manquant").hide();
+    }
+
+    var adresses = $("#adresses").val();
+    if (adresses === "") {
+        envoi = false;
+        $("#adresse_manquant").show();
+    }
+    else {
+        $("#adresse_manquant").hide();
+    }
+
+    if (envoi) {
+        $("form")[0].submit();
+    }
+};
 });
