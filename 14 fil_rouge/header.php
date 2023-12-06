@@ -91,11 +91,9 @@
 
 <div class="row smplat "></div>
 
+
+
 <div class="form">
-
-
-
-
 <form action="formulaire.php" method="POST"> <!--formulaire-->
         
     <div class="form-group mt-5">
@@ -136,3 +134,4 @@
 
 </form>
 </div>
+
