@@ -93,45 +93,47 @@
 
 
 
-<div class="form">
-<form action="formulaire.php" method="POST"> <!--formulaire-->
-        
-    <div class="form-group mt-5">
-        <label for="nomPrenom">Nom et prénom</label> <!--nom et prenom-->
-        <input type="text" class="form-control" id="nomPrenom">
-        <div id="n_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Ce champ est obligatoire !</strong> 
-        </div><br>
-        
-    </div>
-    <div class="row mt-5"> <!--les deux élément aligner sur une ligne-->
+<div class="form col-12">
 
-        <div class="form-group col-6">
-            <label for="emails">Email</label> <!--email-->
-            <input type="emails" class="form-control" id="emails">
-            <div id="email_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Ce champ est obligatoire !</strong></div>                 
-        </div><br>
-           
-        <div class="form-group col-6">
-            <label for="telephones">Téléphone</label> <!--telephone-->
-            <input type="text" class="form-control" id="telephones">
-            <div id="telephone_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Ce champ est obligatoire !</strong></div> 
-        </div><br>
-        
-    </div>
-    <div class="form-group mt-5 mb-3">
-        <label for="adresses">Votre adresse :</label> <!--adresse-->
-        <textarea class="form-control" id="adresses" name="adresses"></textarea>
-        <div id="adresse_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Ce champ est obligatoire !</strong> 
-        </div><br>
-    </div>
-    <div class="form-group mt-5 mb-3">
-        <button type="submit" href="#" id="envoie" class="btn btn-light btns">Envoyer</button> <!--bouton-->
-    </div>
+    <form action="formulaire.php" method="POST"> <!--formulaire-->
+            
+        <div class="form-group mt-5">
+            <label for="nomPrenom">Nom et prénom</label> <!--nom et prenom-->
+            <input type="text" class="form-control" id="nomPrenom">
+            <div id="n_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Ce champ est obligatoire !</strong> 
+            </div><br>
+            
+        </div>
+        <div class="row mt-5"> <!--les deux élément aligner sur une ligne-->
 
-</form>
+            <div class="form-group col-12 col-md-6 ">
+                <label for="emails">Email</label> <!--email-->
+                <input type="emails" class="form-control" id="emails">
+                <div id="email_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Ce champ est obligatoire !</strong></div>                 
+            </div><br>
+            
+            <div class="form-group col-12 col-md-6  ">
+                <label for="telephones">Téléphone</label> <!--telephone-->
+                <input type="text" class="form-control" id="telephones">
+                <div id="telephone_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Ce champ est obligatoire !</strong></div> 
+            </div><br>
+            
+        </div>
+        <div class="form-group mt-5 mb-3">
+            <label for="adresses">Votre adresse :</label> <!--adresse-->
+            <textarea class="form-control" id="adresses" name="adresses"></textarea>
+            <div id="adresse_manquant" style="display: none;" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Ce champ est obligatoire !</strong> 
+            </div><br>
+        </div>
+        <div class="form-group mt-5 mb-3">
+            <button type="submit" href="#" id="envoie" class="btn btn-light btns">Envoyer</button> <!--bouton-->
+        </div>
+
+    </form>
+
 </div>
 

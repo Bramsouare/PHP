@@ -1,12 +1,11 @@
 $(document).ready(function () {
 
     $("#envoyer").click(function (e) {
-       
-        e.preventDefault();
-        validation();
+
+        validation(e);
     });
 
-    function validation() {
+    function validation(e) {
        
         var envoi = true;
 
@@ -14,6 +13,7 @@ $(document).ready(function () {
         if (nom === "") {
             envoi = false;
             $("#n").show();
+            e.preventDefault();
         
         }
         else {
@@ -21,12 +21,12 @@ $(document).ready(function () {
             $("#n").hide();
 
         };
-   
-
+     
         var prenom = $("#prenom").val();
         if (prenom === "") {
             envoi = false;
             $("#p").show();
+            e.preventDefault();
         }
         else {
             $("#p").hide();
@@ -37,6 +37,7 @@ $(document).ready(function () {
         if (email === "") {
             envoi = false;
             $("#e").show();
+            e.preventDefault();
         }
         else {
             $("#e").hide();
@@ -48,6 +49,7 @@ $(document).ready(function () {
         if (telephone === "") {
             envoi = false;
             $("#t").show();
+            e.preventDefault();
         }
         else {
             $("#t").hide();
@@ -59,62 +61,68 @@ $(document).ready(function () {
         if (message === "") {
             envoi = false;
             $("#m").show();
+            e.preventDefault();
         }
         else {
             $("#m").hide();
     
         };
        
-
     };
     $("#envoie").click(function (e) {
-    
-             e.preventDefault();
-        valide();
-    });
-    function valide(){
-
         
+        valide(e);
 
-    var nomp = $("#nomPrenom").val();
-    if (nomp === "") {
-        envoi = false;
-        $("#n_manquant").show();
-    }
-    else {
-        $("#n_manquant").hide();
-        alert("f");
-    }
-    console.log(nomp);
-    var emails = $("#emails").val();
-    if (emails === "") {
-        envoi = false;
-        $("#email_manquant").show();
-    }
-    else {
-        $("#email_manquant").hide();
-    }
+    });
 
-    var tel = $("#telephones").val();
-    if (tel === "") {
-        envoi = false;
-        $("#telephone_manquant").show();
-    }
-    else {
-        $("#telephone_manquant").hide();
-    }
+    function valide(e) {
 
-    var adresses = $("#adresses").val();
-    if (adresses === "") {
-        envoi = false;
-        $("#adresse_manquant").show();
-    }
-    else {
-        $("#adresse_manquant").hide();
-    }
+        var nomp = $("#nomPrenom").val();
 
-    if (envoi) {
-        $("form")[0].submit();
-    }
-};
+        if (nomp === "") {
+            envoi = false;
+            $("#n_manquant").show();
+            e.preventDefault();
+        }
+        else {
+            $("#n_manquant").hide();
+
+        }
+        console.log(envoie);
+        var emails = $("#emails").val();
+
+        if (emails === "") {
+            envoi = false;
+            $("#email_manquant").show();
+            e.preventDefault();
+        }
+        else {
+            $("#email_manquant").hide();
+        }
+
+        var tel = $("#telephones").val();
+
+        if (tel === "") {
+            envoi = false;
+            $("#telephone_manquant").show();
+            e.preventDefault();
+        }
+        else {
+            $("#telephone_manquant").hide();
+        }
+
+        var adresses = $("#adresses").val();
+
+        if (adresses === "") {
+            envoi = false;
+            $("#adresse_manquant").show();
+            e.preventDefault();
+         alert("c");
+        }
+        else {
+            $("#adresse_manquant").hide();
+        }
+
+    };
+
 });

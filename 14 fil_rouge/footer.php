@@ -22,7 +22,8 @@
 
     $(document).ready(function () { // exécute le document une fois prêt
 
-        
+        var btns = $("#btns");
+                
         var result = $("#a"); // la div des cartes de l'index
         
         var index = $(".index"); // la div de lindex
@@ -199,11 +200,13 @@
 
             function pushcommande(ids) { // déclare la fonction avec un paramètre ids
 
+                
+                divplat.empty(); // cache les carte de plats
                 result.empty(); // vide les contenue des variables
-                smplat.empty();
+                smplat.empty(); 
                 form.show(); // affiche le formulaire
 
-
+                console.log(ids);
                 $.each(plat, function(groupe, individuel){ // parcour chaque élément de json 
 
                     if (ids == individuel.id_plat){ // compare si l'id et comparable a l'id plat
@@ -226,6 +229,10 @@
                 });
             };
 
+
+    // AFFICHAGE CARTE PLATS :
+
+    
             for (i = 0; i < plat.length; i++) { // une boucle qui parcour tout les plats
 
                 var plt = plat[i]; // mis a jour pour crée dynamiquement les cartes
@@ -245,48 +252,11 @@
                 divplat.append(card);
             };
 
-            var btns = $("#btns");
+           
 
-            form.hide();
+          
 
-            $(document).on("click", ".idd", function(e){
-                        
-                e.preventDefault();
-                console.log("e");
-                var ids = $(this).attr("value");
-
-                pushcommande(ids);
-                
-            });
-
-            function pushcommande(ids) {
-
-                $(".btns").hide();
-                $("#titre").hide();
-                $("#b").empty();
-                $("#divplat").empty();
-                form.show();
-            };
-
-            $.each(plat, function(groupe, individuel) {
-
-                if (ids == individuel.id_plat){
-
-                    var carte = `
-                        <div class="card custom-border bg zoom col-12 col-md-2 mb-3 my-3 mx-4 d-flex justify-content-center">
-                            <img src="asset/images_the_district/food/${individuel.image}" class="card-img-top border-1 mt-3 img-fluid card-img imgs" alt="${individuel.libelle}">
-                            <div class="card-body text-center">
-                                <h3 class="card-title">${individuel.libelle}</h3>
-                                <p class="card-text">${individuel.description} <br>
-                                Menu: ${individuel.prix} €</p>
-                                <a href="#" class="btn btn-light d-flex justify-content-center">Quantité: 1</a>
-                            </div>
-                        </div>`;
-
-                    commande.append(carte);
-
-                };
-            });
+           
 
         });
 
